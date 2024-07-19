@@ -1,0 +1,89 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+
+    height: 80px;
+}
+
+.title {
+    margin: 0;
+
+    font-size: 24px;
+}
+
+.shopSelect {
+    width: fit-content;
+    display: flex;
+
+    background-color: var(--color-gray-050);
+
+    padding: 3px;
+
+    border-radius: 100px;
+    
+    button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        padding: 4px 10px;
+        border: none;
+
+        font-size: 12px;
+
+        background-color: transparent;
+
+        display: flex;
+
+        border-radius: 100px;
+
+        &[data-selected="true"] {
+            background-color: var(--color-white);
+        }
+    }
+}
+
+.inputBox {
+    width: calc(100% - 32px);
+    height: 50px;
+
+    padding-left: 20px;
+
+    margin: 0 15px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--color-gray-030);
+
+    color: var(--color-gray-500);
+
+    input {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 10px;
+
+        border: 0;
+
+        background-color: transparent;
+        color: inherit;
+
+        font-size: 15px;
+
+        margin-left: 10px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    svg {
+        color: inherit;
+    }
+}

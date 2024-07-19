@@ -1,0 +1,26 @@
+:root {
+    --color-background: #fff;
+    --color-border: #E5E5E5;
+    --color-primary: #1ebaff;
+    --color-white: #fff;
+    --color-black: #000;
+
+    --color-gray-030: #F2F2F2;
+    --color-gray-050: #EBEBEB;
+    --color-gray-100: #d0d0d0;
+    --color-gray-200: #B5B5B5;
+    --color-gray-500: #747474;
+    --color-gray-600: #585858;
+    --color-gray-700: #464646;
+  
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR';
+}
