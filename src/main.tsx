@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 
 import './styles/globals.scss';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import PageMap from './pages/map';
 import PageHome from './pages/home';
 import PageLogin from "./pages/login.tsx";
 import {RecoilRoot} from "recoil";
@@ -19,10 +18,6 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <PageHome />,
-    },
-    {
-      path: "/map",
-      element: <PageMap />,
     },
     {
         path: '/sleep',

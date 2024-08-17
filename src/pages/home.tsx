@@ -44,7 +44,7 @@ function PageHome() {
     return (
         <>
             <div className={style.container}>
-                <img src={Logo} className={style.icon}/>
+                <img src={Logo} className={style.icon} alt={''}/>
                 <div className={style.input}>
                     <IoSearchSharp/>
                     <input placeholder={'검색어를 입력해주세요'}></input>

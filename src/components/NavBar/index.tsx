@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import style from './style.module.scss';
-import { useLocation } from 'react-router-dom';
 
 interface NavBarProps {
     children?: React.ReactNode

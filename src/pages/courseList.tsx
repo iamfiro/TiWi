@@ -48,12 +48,13 @@ const List = ({name, date, id}: Course) => {
 }
 
 const PageCourseList = () => {
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, _] = useState(false);
     const [data, setData] = useState([]);
 
     useEffect(() => {
         const q = query(collection(db, 'log'));
 
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		const unsubscribe = onSnapshot(q, (snapshot: any) => {
 			const data = snapshot.docs.map((doc: any) => {
                 if (doc.data().userId == auth.currentUser?.uid) return { id: doc.id, ...doc.data() };
