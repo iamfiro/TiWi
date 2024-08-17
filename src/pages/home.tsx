@@ -67,18 +67,6 @@ function PageHome() {
                         location={'서울시 용산'}
                         image={'https://mono.aks.ac.kr/s/media/da/da2261da-8010-4b0a-a99e-9fd909c3234d.jpg?preset=page'}
                     />
-                    <Vacation
-                        id={'1'}
-                        title={'N서울타워'}
-                        location={'서울시 용산'}
-                        image={'https://mono.aks.ac.kr/s/media/da/da2261da-8010-4b0a-a99e-9fd909c3234d.jpg?preset=page'}
-                    />
-                    <Vacation
-                        id={'1'}
-                        title={'N서울타워'}
-                        location={'서울시 용산'}
-                        image={'https://mono.aks.ac.kr/s/media/da/da2261da-8010-4b0a-a99e-9fd909c3234d.jpg?preset=page'}
-                    />
                 </Column>
             </div>
             <TemplateNav isHome={true}/>
