@@ -14,6 +14,7 @@ import PageCourseList from "./pages/courseList.tsx";
 import PageCourseDetail from "./pages/courseDetail.tsx";
 import PageNotFound from "./pages/404.tsx";
 import * as serviceWorkerRegistration from './serviceWorkerRegister.ts';
+import PageLogout from "./pages/Logout.tsx";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
     {
         path: '*',
         element: <PageNotFound />
+    },
+    {
+        path: '/logout',
+        element: <PageLogout />
     }
 ]);
 
