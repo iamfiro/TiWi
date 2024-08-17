@@ -11,19 +11,16 @@ const PageLogin = () => {
         const provider = new GoogleAuthProvider();
 
         await signInWithRedirect(auth, provider);
-
-        navigate('/');
     }
 
     useEffect(() => {
-        onAuthStateChanged(
-                    getAuth(),
-           async (user) => {
-                if(user) {
-                    navigate('/');
-                }
-           },
-         );
+        const unsubscript = onAuthStateChanged(auth, () => {
+            window.history.replaceState({}, '', '/');
+        });
+
+        return () => {
+            unsubscript();
+        }
     }, []);
 
     return (
