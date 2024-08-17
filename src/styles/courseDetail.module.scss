@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 30px 0px 60px 0px;
+
+    overflow-y: auto;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: bold;
+
+    margin: 0;
+}
+
+.header {
+    padding: 0 20px 30px 20px;
+}
+
+.date {
+    background-color: var(--color-gray-030);
+    color: var(--color-gray-300);
+
+    font-size: 16px;
+
+    padding: 8px 15px;
+}
+
+.navigate {
+    padding: 20px;
+
+    border-bottom: 1px solid var(--color-gray-030);
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .data {
+        opacity: 0.4;
+
+        font-size: 16px;
+    }
+}

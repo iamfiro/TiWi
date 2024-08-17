@@ -5,9 +5,15 @@ import './styles/globals.scss';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PageMap from './pages/map';
 import PageHome from './pages/home';
-import PageShop from './pages/shop';
-import TemplateNav from "./template/Nav.tsx";
 import PageLogin from "./pages/login.tsx";
+import {RecoilRoot} from "recoil";
+import SleepTime from "./pages/sleepTime.tsx";
+import PageChat from "./pages/chat.tsx";
+import PageFetchFirstRoute from "./pages/fetchFirstRoute.tsx";
+import TooManyRequests from "./pages/429.tsx";
+import PageCourseList from "./pages/courseList.tsx";
+import PageCourseDetail from "./pages/courseDetail.tsx";
+import PageNotFound from "./pages/404.tsx";
 
 const router = createBrowserRouter([
     {
@@ -19,22 +25,44 @@ const router = createBrowserRouter([
       element: <PageMap />,
     },
     {
-        path: "/shop",
-        element: <PageShop />,
+        path: '/sleep',
+        element: <SleepTime />
     },
     {
-        path: '/stamp',
-        element: <TemplateNav />
+        path: '/chat',
+        element: <PageChat />
+    },
+    {
+        path: '/fetchRoute',
+        element: <PageFetchFirstRoute/>
+    },
+    {
+        path: '/429',
+        element: <TooManyRequests />
+    },
+    {
+        path: '/course',
+        element: <PageCourseList />
+    },
+    {
+        path: '/course/:id',
+        element: <PageCourseDetail />
     },
     // Auth
     {
         path: '/login',
         element: <PageLogin />
+    },
+    {
+        path: '*',
+        element: <PageNotFound />
     }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <RecoilRoot>
+            <RouterProvider router={router} />
+        </RecoilRoot>
     </React.StrictMode>,
 )

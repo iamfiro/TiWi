@@ -4,6 +4,8 @@ import Logo from '../assets/logo.svg';
 import { IoSearchSharp } from "react-icons/io5";
 import {Column, Row} from "../components";
 import  {useNavigate} from "react-router-dom";
+import {useRecoilState} from "recoil";
+import {vacationState} from "../store/vacation.ts";
 
 
 interface Vacation {
@@ -14,13 +16,21 @@ interface Vacation {
 }
 
 function Vacation({id, title, location, image}: Vacation) {
+    const [userData, setUserData] = useRecoilState(vacationState);
     const navigate = useNavigate();
     return (
         <>
             <article className={style.vacation} onClick={() => {
-                navigate('/sleep')
+                navigate('/sleep');
+                setUserData({
+                    ...userData,
+                    startedVacationId: id,
+                    vacationName: title,
+                    vacationLocation: location,
+                    vacationImage: image,
+                })
             }}>
-                <img src={image}/>
+                <img src={image} alt={'s'} />
                 <Row style={{ alignItems: 'center', justifyContent: 'space-between', marginTop: '12px'}}>
                     <span>{title}</span>
                     <span className={style.vacationLocation}>{location}</span>
@@ -71,7 +81,7 @@ function PageHome() {
                     />
                 </Column>
             </div>
-            <TemplateNav/>
+            <TemplateNav isHome={true}/>
         </>
     );
 }

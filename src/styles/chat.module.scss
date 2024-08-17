@@ -1,0 +1,257 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100vh;
+
+    padding: 115px 0 10px 0;
+
+    overflow-y: auto;
+}
+
+.container {
+    margin: 0 20px 0 20px;
+
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 15px;
+    left: 0;
+
+    background-color: white;
+
+    width: 100%;
+
+    border-bottom: 1px solid var(--color-border);
+
+    padding: 0 20px 10px 20px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 40px;
+
+    border-radius: 6px;
+}
+
+.selectedVacationLocation {
+    opacity: 0.4;
+
+    font-size: 12px;
+}
+
+.aiTag {
+    padding: 5px;
+
+    height: fit-content;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    color: white;
+
+    border-radius: 5px;
+
+    background-color: mediumpurple;
+}
+
+.userInput {
+    padding-top: 10px;
+    input {
+        width: 100%;
+        height: 50px;
+
+        background-color: var(--color-gray-030);
+
+        border-radius: 100px;
+        border: 0;
+
+        padding: 0 0 0 15px;
+
+        font-size: 14px;
+
+        &::placeholder {
+            font-weight: 600;
+        }
+    }
+
+    button {
+        background-color: var(--color-primary);
+
+        border: 0;
+
+        height: 40px;
+        width: 60px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 100px;
+
+        &:disabled {
+            background-color: var(--color-gray-100);
+        }
+    }
+
+    button:last-child {
+        background-color: mediumpurple;
+    }
+}
+
+.navigateButton {
+    width: 100%;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    button:first-child {
+        width: 100%;
+        background-color: var(--color-gray-030);
+
+        border: 0;
+
+        height: 38px;
+
+        border-radius: 100px;
+
+        color: var(--color-gray-500);
+
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    button:last-child {
+        width: 100%;
+        background-color: var(--color-primary);
+
+        border: 0;
+
+        height: 38px;
+
+        border-radius: 100px;
+
+        color: white;
+
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.mapModal {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(90%);
+    height: 80%;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 15px 20px 15px 20px;
+
+        border-bottom: 1px solid var(--color-border);
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+
+            margin: 0;
+        }
+
+        button {
+            color: var(--color-black);
+
+            font-size: 18px;
+
+            border: 0;
+
+            padding: 8px 8px 4px 8px;
+
+            border-radius: 10px;
+
+            svg {
+                margin: auto;
+
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 0 0 7px 7px;
+
+    background-color: red;
+}
+
+.userMessage {
+    background-color: var(--color-primary);
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    max-width: 70%;
+
+    text-align: right;
+
+    margin-top: 15px;
+}
+
+.aiMessage {
+    background-color: var(--color-gray-030);
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    color: var(--color-gray-500);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    max-width: 70%;
+
+    text-align: left;
+
+    margin-top: 15px;
+}

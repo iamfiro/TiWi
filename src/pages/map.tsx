@@ -39,6 +39,14 @@ function PageMap() {
         }
     }, [currentLocation, initializeMap]);
 
+    useEffect(() => {
+        if (currentLocation.loaded) {
+            initializeMap(currentLocation.coordinates || { lat: 37.5423, lng: 126.9706 });
+        } else {
+            initializeMap({ lat: 37.5423, lng: 126.9706 });
+        }
+    }, [currentLocation, initializeMap]);
+
     /**
      * 현재 위치로 지도를 이동시키는 함수입니다.
      */

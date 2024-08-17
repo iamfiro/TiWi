@@ -49,3 +49,38 @@ button {
 input {
     font-size: inherit;
 }
+
+.map_marker {
+    background-color: white;
+
+    border-radius: 5px;
+
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+
+    span {
+        font-size: 10px;
+
+        text-align: center;
+    }
+}
+
+@keyframes SpinningAnimation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.spinning {
+	animation: SpinningAnimation 7s infinite linear;
+}

@@ -21,15 +21,12 @@ interface NavBarItemProps {
     name: string
     id: string;
     icon: ReactNode
+    isHome: boolean;
 }
 
-function NavBarItem({ name, id, icon }: NavBarItemProps) {
-    const router = useLocation();
-
-    console.log(router.pathname)
-
+function NavBarItem({ name, id, icon, isHome }: NavBarItemProps) {
     return (
-        <a href={`/${id}`} className={style.item} data-selected={`/${id}` == router.pathname}>
+        <a href={`/${id}`} className={style.item} data-selected={isHome}>
             {icon}
             <span>{name}</span>
         </a>

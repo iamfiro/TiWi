@@ -1,16 +1,28 @@
 import NavBar from "../components/NavBar";
 import {GoHomeFill} from "react-icons/go";
-import {FaBasketShopping} from "react-icons/fa6";
-import { FaStamp } from "react-icons/fa";
+// import { FaStamp } from "react-icons/fa";
+import { MdGolfCourse } from "react-icons/md";
 
-const TemplateNav = () => {
-    return (
-        <NavBar>
-            <NavBar.Item name="스탬프" id="stamp" icon={<FaStamp size={23} />} />
-            <NavBar.Item name="홈" id="" icon={<GoHomeFill size={25} />} />
-            <NavBar.Item name="쇼핑" id="shop" icon={<FaBasketShopping size={25} />} />
-        </NavBar>
-    )
+interface NavItemProps {
+    isHome: boolean;
+}
+
+const TemplateNav = ({ isHome }: NavItemProps) => {
+    if(isHome) {
+        return (
+            <NavBar>
+                <NavBar.Item name="홈" id="" icon={<GoHomeFill size={25} />} isHome={true} />
+                <NavBar.Item name="코스" id="course" icon={<MdGolfCourse size={25} />} isHome={false} />
+            </NavBar>
+        )
+    } else {
+        return (
+            <NavBar>
+                <NavBar.Item name="홈" id="" icon={<GoHomeFill size={25} />} isHome={false} />
+                <NavBar.Item name="코스" id="course" icon={<MdGolfCourse size={25} />} isHome={true} />
+            </NavBar>
+        )
+    }
 }
 
 export default TemplateNav;
