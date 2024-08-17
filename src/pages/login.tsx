@@ -11,6 +11,8 @@ const PageLogin = () => {
         const provider = new GoogleAuthProvider();
 
         await signInWithRedirect(auth, provider);
+
+        navigate('/');
     }
 
     useEffect(() => {
