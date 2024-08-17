@@ -19,6 +19,29 @@
     color: var(--color-gray-300);
 }
 
+.submit {
+    height: 60px;
+
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    img {
+        width: 24px;
+    }
+
+    span {
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
 .login {
     width: 100%;
 }

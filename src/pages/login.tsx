@@ -27,6 +27,10 @@ const PageLogin = () => {
                 <h1 className={style.title}>TIWI 로그인</h1>
                 <span className={style.description}>뭔가 앱 설명이 들어 갈 곳</span>
             </Column>
+            <button className={style.submit}>
+                <img src={'https://cdn4.iconfinder.com/data/icons/logos-brands-7/512/google_logo-google_icongoogle-512.png'} />
+                <span>구글 로그인</span>
+            </button>
             <img className={style.login} src={KakaoLogin} onClick={() => {
                 handleLogin();
             }}/>
