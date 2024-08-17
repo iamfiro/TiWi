@@ -1,7 +1,9 @@
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
+
 :root {
     --color-background: #fff;
     --color-border: #E5E5E5;
-    --color-primary: #1ebaff;
+    --color-primary: #FFC13C;
     --color-white: #fff;
     --color-black: #000;
 
@@ -9,6 +11,7 @@
     --color-gray-050: #EBEBEB;
     --color-gray-100: #d0d0d0;
     --color-gray-200: #B5B5B5;
+    --color-gray-300: #989898;
     --color-gray-500: #747474;
     --color-gray-600: #585858;
     --color-gray-700: #464646;
@@ -21,6 +24,28 @@ body, html {
 }
 
 * {
-  box-sizing: border-box;
-  font-family: 'Noto Sans KR';
+    box-sizing: border-box;
+
+    font-family: "Wanted Sans Variable", "Wanted Sans", -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+span {
+	font-weight: 500;
+}
+
+button {
+	cursor: pointer;
+
+	&:active {
+		transform: scale(0.97);
+	}
+}
+
+input {
+    font-size: inherit;
 }

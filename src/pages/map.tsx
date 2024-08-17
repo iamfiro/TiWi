@@ -8,6 +8,7 @@ import ClinicMarker from '../../public/icons/clinic-marker.png';
 import { DummyHospital } from "../dummy/hospital";
 import style from '../styles/map.module.scss';
 import { useNavigate } from "react-router-dom";
+import TemplateNav from "../template/Nav.tsx";
 
 /**
  * PageMap 컴포넌트는 지도와 병원 마커를 표시하는 페이지입니다.
@@ -27,24 +28,6 @@ function PageMap() {
             center: new naver.maps.LatLng(location.lat, location.lng),
             zoom: 17,
             mapTypeId: naver.maps.MapTypeId.NORMAL
-        });
-
-        DummyHospital.forEach(hospital => {
-            const marker = new naver.maps.Marker({
-                position: new naver.maps.LatLng(hospital.lat, hospital.lng),
-                map: map,
-                icon: {
-                    url: ClinicMarker,
-                    size: new naver.maps.Size(40, 40),
-                    scaledSize: new naver.maps.Size(40, 40),
-                    origin: new naver.maps.Point(0, 0),
-                    anchor: new naver.maps.Point(15, 15)
-                }
-            });
-
-            naver.maps.Event.addListener(marker, 'click', () => {
-                navigate(`/hospital?name=${encodeURIComponent(hospital.name)}`);
-            });
         });
     }, [navigate]);
 
@@ -68,19 +51,12 @@ function PageMap() {
     return (
         <>
             <main className={style.container}>
-                <header className={style.header}>
-                    <h1>펫팅</h1>
-                </header>
                 <button className={style.currentLocation} onClick={handleCurrentLocation}>
                     <MdGpsFixed size={20} />
                 </button>
                 <div ref={mapRef} style={{ width: '100%', height: '100%' }}></div>
             </main>
-            <NavBar>
-                <NavBar.Item name="동물병원" id="map" icon={<MdMap />} />
-                <NavBar.Item name="홈" id="" icon={<GoHomeFill />} />
-                <NavBar.Item name="쇼핑" id="shop" icon={<FaBasketShopping />} />
-            </NavBar>
+            <TemplateNav />
         </>
     );
 }

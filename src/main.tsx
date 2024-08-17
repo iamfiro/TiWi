@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PageMap from './pages/map';
 import PageHome from './pages/home';
 import PageShop from './pages/shop';
+import TemplateNav from "./template/Nav.tsx";
+import PageLogin from "./pages/login.tsx";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +21,15 @@ const router = createBrowserRouter([
     {
         path: "/shop",
         element: <PageShop />,
+    },
+    {
+        path: '/stamp',
+        element: <TemplateNav />
+    },
+    // Auth
+    {
+        path: '/login',
+        element: <PageLogin />
     }
 ]);
 
