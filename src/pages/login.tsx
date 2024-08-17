@@ -1,9 +1,9 @@
-import KakaoLogin from '../assets/kakao_login.png';
 import style from '../styles/login.module.scss';
 import {Column} from "../components";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged} from "firebase/auth";
 import { auth } from '../firebase/firebaseConfig';
 import {useNavigate} from "react-router-dom";
+import {useEffect} from "react";
 const PageLogin = () => {
     const navigate = useNavigate();
 
@@ -20,6 +20,15 @@ const PageLogin = () => {
             })
 
     }
+
+    useEffect(() => {
+        onAuthStateChanged(
+                    getAuth(),
+           async (user) => {
+             console.log('user', user);
+           },
+         );
+    }, []);
 
     return (
         <main className={style.container}>
