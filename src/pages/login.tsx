@@ -1,31 +1,25 @@
 import style from '../styles/login.module.scss';
 import {Column} from "../components";
-import {getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged} from "firebase/auth";
+import {getAuth, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, getRedirectResult} from "firebase/auth";
 import { auth } from '../firebase/firebaseConfig';
 import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 const PageLogin = () => {
     const navigate = useNavigate();
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         const provider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, provider)
-            .then((data) => {
-                navigate('/');
-                console.log(data);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-
+        await signInWithRedirect(auth, provider);
     }
 
     useEffect(() => {
         onAuthStateChanged(
                     getAuth(),
            async (user) => {
-             console.log('user', user);
+                if(user) {
+                    navigate('/');
+                }
            },
          );
     }, []);
