@@ -13,6 +13,7 @@ import TooManyRequests from "./pages/429.tsx";
 import PageCourseList from "./pages/courseList.tsx";
 import PageCourseDetail from "./pages/courseDetail.tsx";
 import PageNotFound from "./pages/404.tsx";
+import * as serviceWorkerRegistration from './serviceWorkerRegister.ts';
 
 const router = createBrowserRouter([
     {
@@ -61,3 +62,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </RecoilRoot>
     </React.StrictMode>,
 )
+
+serviceWorkerRegistration.register();
