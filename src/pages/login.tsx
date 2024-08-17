@@ -1,11 +1,9 @@
 import style from '../styles/login.module.scss';
 import {Column} from "../components";
-import {getAuth, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, getRedirectResult} from "firebase/auth";
+import { GoogleAuthProvider, signInWithRedirect, onAuthStateChanged} from "firebase/auth";
 import { auth } from '../firebase/firebaseConfig';
-import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 const PageLogin = () => {
-    const navigate = useNavigate();
 
     const handleLogin = async () => {
         const provider = new GoogleAuthProvider();
